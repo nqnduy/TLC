@@ -1,0 +1,175 @@
+:root {
+
+    --h1FS: 10rem;
+    --h1LH: 1;
+
+    --h2FS: 6rem;
+    --h2LH: 1.3;
+
+    --h3FS: 4.8rem;
+    --h3LH: 1.4;
+
+    --h4FS: 3.2rem;
+    --h4LH: 1.4;
+
+    --h5FS: 2.4rem;
+    --h5LH: 1.4;
+
+    --h6FS: 1.6rem;
+    --h6LH: 1.5;
+
+
+    --body24FS: 2.4rem;
+
+    --body16FS: 1.6rem;
+
+    --body14-fs: 1.4rem;
+    --body14-lh: 2.1rem;
+
+    --body13-fs: 1.3rem;
+    --body13-lh: 1.8rem;
+
+    --body12-fs: 1.2rem;
+    --body12-lh: 1.6rem;
+
+    // variable
+    --heightHeader: 9rem;
+    --paddingSection: 12rem;
+
+    --height-button: 56px;
+    --pd-section: 110px;
+    --gap: 11rem;
+
+    @media (max-width: 1599px) {
+        --gap: 10rem;
+
+        --h1FS: 8rem;
+        --h2FS: 5.5rem;
+        --h3FS: 4.3rem;
+        --h4FS: 3rem;
+        --h5FS: 2.1rem;
+
+        --body24FS: 2.1rem;
+        --body16FS: 1.5rem;
+
+    }
+
+    @media (max-width: 1439px) {
+        --gap: 7.8rem;
+        --heightHeader: 7.5rem;
+        --paddingSection: 9rem;
+
+        --h1FS: 7.4rem;
+        --h2FS: 4.5rem;
+        --h3FS: 4rem;
+        --h4FS: 2.5rem;
+        --h5FS: 1.9rem;
+        --h6FS: 1.5rem;
+
+        --body24FS: 1.8rem;
+        --body16FS: 1.4rem;
+
+    }
+    @media (max-width: 1279px){
+        --gap: 5rem;
+        --paddingSection: 7.8rem;
+
+
+        --h1FS: 6.8rem;
+        --h2FS: 4rem;
+        --h3FS: 3.3rem;
+        --h4FS: 2.4rem;
+        --h5FS: 1.8rem;
+        --h6FS: 1.4rem;
+
+        --body24FS: 1.5rem;
+        --body16FS: 1.3rem;
+
+    }
+    @media (max-width: 1023px) {
+        --heightHeader: 6rem;
+        --gap: 3.5rem;
+        --paddingSection: 7rem;
+
+
+        --h1FS: 5.2rem;
+        --h2FS: 3.2rem;
+        --h3FS: 2.6rem;
+        --h4FS: 2.2rem;
+        --h5FS: 1.4rem;
+        --h6FS: 1.2rem;
+
+        --body24FS: 1.3rem;
+        --body16FS: 1.2rem;
+    }
+    @media screen and (max-width: 991px){
+        --paddingSection: 8rem;
+
+        --h3FS: 3.3rem;
+        --h2FS: 4rem;
+        --h4FS: 2.4rem;
+        --h5FS: 1.9rem;
+        --h6FS: 2rem;
+        --h6LH: 1.4;
+
+        --body24FS: 2.4rem;
+        --body16FS: 1.6rem;
+
+    }
+    @media (max-width: 767px) {
+        --gap: 1.5rem;
+
+        --h1FS: 4.8rem;
+        --h2FS: 3.2rem;
+        --h3FS: 2.8rem;
+        --h5FS: 2.4rem;
+
+        --body24FS: 1.8rem;
+    }
+
+    @media (max-width: 500px) {
+        --h6FS: 1.8rem;
+        --body16FS: 1.55rem;
+    }
+}
+
+/*primary colors*/
+$primary-cl: #2F4273;
+$secondary-cl: #CCA170;
+$tertiary-cl: #161C2D;
+
+$white100-cl: #fff;
+
+$black30-cl: #3f3f3f;
+$black20-cl: #aeaeae;
+$black14-cl: #e4e4e4;
+$black10-cl: #e3e3e3;
+
+// timing transition
+$t: 0.4s;
+$cubic: cubic-bezier(0.59, 0.29, 0.15, 0.93);
+
+/*font families*/
+$font-stack: "Open Sans", sans-serif;
+$font-main: "CG-400";
+
+//============================================================//
+
+/*BOXED LAYOUT*/
+$container-max-width: 100%;
+$container-width: 192rem;
+
+/*GRID - media queries breakpoints*/
+$xxs-min: 400px;
+$xs-min: 768px;
+$sm-min: 992px;
+$lt-min: 1280px;
+$md-min: 1440px;
+$lg-min: 1600px;
+
+$xxs-max: ($xxs-min - 1); // Small Mobile
+$xs-max: ($xs-min - 1); // Mobile
+$sm-max: ($sm-min - 1); // Tablet
+$md-max: ($lt-min - 1); // Laptop-S
+$md-max: ($md-min - 1); // Desktop/Laptop-M
+$lg-max: ($lg-min - 1); // Large Desktop

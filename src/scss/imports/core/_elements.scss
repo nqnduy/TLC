@@ -1,0 +1,242 @@
+// css button, title, icon, elements...
+img {
+    max-width: 100%;
+    height: auto;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+    display: block;
+    outline: 0;
+    &.--center {
+        margin: 0 auto;
+        display: block;
+    }
+}
+a {
+    text-decoration: none;
+    outline: 0;
+    // color: $black30-cl;
+    &.link {
+        color: $primary-cl;
+        @include transition($t);
+        &:hover {
+            // opacity: 0.6;
+        }
+    }
+}
+strong {
+    font-family: gb;
+}
+
+sup {
+    vertical-align: super;
+    font-size: var(--body14-fs);
+    line-height: var(--body14-lh);
+}
+sub {
+    vertical-align: sub;
+    font-size: var(--body14-fs);
+    line-height: var(--body14-lh);
+}
+
+//================================== COLOR ===========================//
+.--white-cl {
+    color: $white100-cl;
+}
+.--main-cl {
+    color: $primary-cl;
+}
+
+//================================== HEADING ===========================//
+.heading {
+    display: block;
+    // font-family: ob;
+    text-transform: uppercase;
+    text-align: center;
+    &.--h0 {
+        font-size: var(--h0-fs);
+        line-height: var(--h0-lh);
+    }
+    &.--h1 {
+        font-size: var(--h1-fs);
+        line-height: var(--h1-lh);
+    }
+    &.--h2 {
+        font-size: var(--h2-fs);
+        line-height: var(--h2-lh);
+    }
+    &.--h3 {
+        font-size: var(--h3-fs);
+        line-height: var(--h3-lh);
+    }
+    &.--h4 {
+        font-size: var(--h4-fs);
+        line-height: var(--h4-lh);
+    }
+    &.--h5 {
+        font-size: var(--h5-fs);
+        line-height: var(--h5-lh);
+    }
+}
+
+/////////////////////////// BUTTON //////////////////////////
+
+.btnMain {
+    --paddingButton: 1.25rem 3.2rem;
+
+    width: max-content;
+    font-size: var(--body16FS);
+    text-transform: uppercase;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    background-color: $primary-cl;
+    color: white;
+    border-radius: 100vmax;
+    padding: var(--paddingButton);
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.7,0,0.3,1);
+    border: 1px solid $primary-cl;
+    // box-shadow: 0 2px 8px -1px rgba(21, 25, 36, 0.32);
+    span {
+        position: relative;
+        display: block;
+        transition: transform 0.3s ease-out;
+        line-height: 1.6;
+        font-family: 'MRope-600';
+        color: white;
+
+        &:before {
+            content: attr(data-text);
+            position: absolute;
+            bottom: 100%;
+            // font-style: italic;
+            width: 100%;
+            text-align: center;
+            left: 0;
+            color: transparent;
+            font-family: 'MRope-600';
+            line-height: 1.6;
+            transition: all 0.4s cubic-bezier(0.7,0,0.3,1);
+        }
+    }
+
+    &:hover {
+        background-color: white;
+        span {
+            color: transparent;
+            transform: translate3d(0,100%,0);
+            transition-delay: 0.2s;
+            transition: all 0.4s cubic-bezier(0.7,0,0.3,1);
+            &:before {
+                color: $primary-cl;
+
+            }
+        }
+    }
+
+    @media screen and (max-width: 1439px){
+        --paddingButton: 0.8rem 2.8rem;
+    }
+    @media screen and (max-width: 1279px){
+        --paddingButton: 0.6rem 2rem;
+        font-size: 1rem;
+    }
+    @media screen and (max-width: 1023px){
+        --paddingButton: 0.5rem 2rem;
+    }
+    @media screen and (max-width: 991px){
+        --paddingButton: 1.2rem 3rem;
+        font-size: 1.5rem;
+    }
+    @media screen and (max-width: 500px){
+        --paddingButton: 1.5rem 4rem;
+        font-size: 1.6rem;
+    }
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'CG-500';
+}
+
+h1 {
+    font-size: var(--h1FS);
+    line-height: var(--h1LH);
+    text-transform: uppercase;
+
+}
+h2 {
+    font-size: var(--h2FS);
+    line-height: var(--h2LH);
+}
+h3 {
+    font-size: var(--h3FS);
+    line-height: var(--h3LH);
+}
+h4 {
+    font-size: var(--h4FS);
+    line-height: var(--h4LH);
+}
+h5 {
+    font-size: var(--h5FS);
+    line-height: var(--h5LH);
+}
+h6 {
+    font-size: var(--h6FS);
+    line-height: var(--h6LH);
+}
+.text-mRope {
+    font-family: 'MRope-600';
+    font-size: var(--body24FS);
+    line-height: 1.6;
+}
+.text-default {
+    font-family: 'MRope-400';
+    font-size: var(--body16FS);
+    line-height: 1.6;
+}
+.headline {
+    font-family: 'CG-500';
+    font-size: var(--body16FS);
+    line-height: 1.35;
+    letter-spacing: 0.04em;
+
+    color: $secondary-cl;
+    text-transform: uppercase;
+    text-align: center;
+
+    margin-bottom: 0.8rem;
+}
+
+.txWhite {
+    color: white;
+}
+.line {
+    overflow: hidden;
+    display: inline-block !important;
+
+    &:nth-of-type(even) {
+        margin-top: -1vw;
+    }
+    &__inner {
+        //display: block !important;
+    }
+}
+
+@keyframes runnerText {
+    to {
+        text-shadow: -9.8ch 0 0.1rem white, 0 0 0.1rem white, 9.8ch 0 0.1rem white, 19.6ch 0 0.1rem white;
+    }
+}
+@keyframes fadeInOpacity {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}

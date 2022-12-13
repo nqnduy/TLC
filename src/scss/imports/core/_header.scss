@@ -1,0 +1,190 @@
+.header {
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+    background-color: white;
+    height: var(--heightHeader);
+    background-color: white;
+    transition: ease-out 0.5s;
+    transform: translateY(0);
+    opacity: 1;
+    .container {
+        height: 100%;
+        display: block;
+        width: 100%;
+    }
+    &.hide {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    .headerMb {
+        display: none;
+    }
+    &__content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        height: 100%;
+        grid-column: 1/9;
+        width: 100%;
+
+        position: relative;
+        .menu {
+            display: flex;
+            align-items: center;
+            position: absolute;
+            left: 50%;
+            @include transform(translate(-50%));
+
+            &-item {
+                position: relative;
+                font-size: var(--body16FS);
+                font-family: 'MRope-600';
+                text-transform: uppercase;
+                padding: 0 2.4rem;
+                width: max-content;
+                a {
+                    position: relative;
+                    width: fit-content;
+                    &:before {
+                        content: "";
+                        position: absolute;
+                        width: 100%;
+                        height: 0.15rem;
+                        background-color: #171717;
+                        bottom: -0.2rem;
+                        left: 0;
+                        transform-origin: right;
+                        @include transform(scaleX(0));
+                        @include transition(0.6s transform cubic-bezier(0.66, 0, 0.15, 1));
+                    }
+                }
+                &:hover {
+                    a {
+                        &:before {
+                            transform-origin: left;
+                            @include transform(scaleX(1));
+                        }
+                    }
+                }
+            }
+        }
+        .logo {
+            position: relative;
+            overflow: hidden;
+            width: 14.2rem;
+            aspect-ratio: 3.55;
+            img {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                @include transform(translate(-50%, -50%));
+                min-width: 100%;
+                min-height: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+    @media screen and (max-width: 1439px){
+        &__content {
+            .menu {
+                &-item {
+                    padding: 0 2rem;
+                }
+            }
+            .logo {
+                width: 10.2rem;
+            }
+        }
+    }
+    @media screen and (max-width: 991px){
+        .container {
+            display: none;
+        }
+        .headerMb {
+            display: block;
+            padding: 0 4rem;
+            height: 100%;
+            &__content {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+                height: 100%;
+                .logo {
+                    position: relative;
+                    overflow: hidden;
+                    width: 8rem;
+                    aspect-ratio: 3.55;
+                    img {
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        @include transform(translate(-50%, -50%));
+
+                        min-width: 100%;
+                        min-height: 100%;
+                        object-fit: cover;
+                    }
+                }
+                .hamburger {
+                    display: flex;
+                    font-family: "CG-500";
+                    font-size: 1.2rem;
+                    line-height: 1.2;
+                    padding: 1rem;
+
+                    color: #171717;
+                    text-transform: uppercase;
+                    position: relative;
+                    @include transition(0.6s all cubic-bezier(0.66, 0, 0.15, 1));
+                    cursor: pointer;
+                    span {
+                        position: relative;
+                        margin-left: 1.4rem;
+                        @include transition(0.6s all cubic-bezier(0.66, 0, 0.15, 1));
+                        &:before {
+                            content: "";
+                            position: absolute;
+                            right: 50%;
+                            top: 0;
+                            width: 2.1rem;
+                            height: 0.2rem;
+                            background-color: #171717;
+                            @include transition(0.6s all cubic-bezier(0.66, 0, 0.15, 1));
+                            @include transform(translate(100%, -0.1rem) rotate(0deg));
+                        }
+                        &:after {
+                            content: "";
+                            position: absolute;
+                            right: 50%;
+                            top: auto;
+                            bottom: 0;
+                            width: 2.1rem;
+                            height: 0.2rem;
+                            background-color: #171717;
+                            @include transition(0.6s all cubic-bezier(0.66, 0, 0.15, 1));
+                            @include transform(translate(100%, -0.1rem) rotate(0deg));
+                        }
+
+                    }
+                    &:after {
+                        content: "close";
+                        position: absolute;
+                        top: 1rem;
+                        left: 1rem;
+                        right: auto;
+                        font-family: "CG-500";
+                        font-size: 1.2rem;
+                        line-height: 1.2;
+
+                        color: transparent;
+                        @include transition(0.6s color cubic-bezier(0.66, 0, 0.15, 1));
+                        text-transform: uppercase;
+                    }
+                }
+            }
+        }
+    }
+}

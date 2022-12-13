@@ -1,0 +1,81 @@
+@font-face {
+  font-family: CG-700;
+  src: url("ClashGrotesk-Bold.0b8001ed.woff2") format("woff2"), url("ClashGrotesk-Bold.a2f1483e.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: fallback;
+}
+
+@font-face {
+  font-family: CG-200;
+  src: url("ClashGrotesk-Extralight.2598b1dd.woff2") format("woff2"), url("ClashGrotesk-Extralight.9cc70b70.woff") format("woff");
+  font-weight: 200;
+  font-style: normal;
+  font-display: fallback;
+}
+
+@font-face {
+  font-family: CG-300;
+  src: url("ClashGrotesk-Light.d10b9eb1.woff2") format("woff2"), url("ClashGrotesk-Light.4c85f64d.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+  font-display: fallback;
+}
+
+@font-face {
+  font-family: CG-600;
+  src: url("ClashGrotesk-Semibold.fa9a3fec.woff2") format("woff2"), url("ClashGrotesk-Semibold.845c4148.woff") format("woff");
+  font-weight: 600;
+  font-style: normal;
+  font-display: fallback;
+}
+
+@font-face {
+  font-family: CG-400;
+  src: url("ClashGrotesk-Regular.4af9c94c.woff2") format("woff2"), url("ClashGrotesk-Regular.b8731890.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: fallback;
+}
+
+@font-face {
+  font-family: CG-500;
+  src: url("ClashGrotesk-Medium.c4f888b7.woff2") format("woff2"), url("ClashGrotesk-Medium.b7296542.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: fallback;
+}
+
+@font-face {
+  font-family: MRope-700;
+  src: url("Manrope-Bold.81442fcf.woff2") format("woff2"), url("Manrope-Bold.88630d8a.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: fallback;
+}
+
+@font-face {
+  font-family: MRope-600;
+  src: url("Manrope-SemiBold.98930bb7.woff2") format("woff2"), url("Manrope-SemiBold.920d84ac.woff") format("woff");
+  font-weight: 600;
+  font-style: normal;
+  font-display: fallback;
+}
+
+@font-face {
+  font-family: MRope-500;
+  src: url("Manrope-Medium.d929a49c.woff2") format("woff2"), url("Manrope-Medium.b8954b8b.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: fallback;
+}
+
+@font-face {
+  font-family: MRope-400;
+  src: url("Manrope-Regular.8572e05a.woff2") format("woff2"), url("Manrope-Regular.c6d0d75c.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: fallback;
+}
+
+/*# sourceMappingURL=index.d87d0efc.css.map */

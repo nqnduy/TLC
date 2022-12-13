@@ -1,0 +1,76 @@
+.loading {
+    @include size(100%);
+    top: 0;
+    left: 0;
+    position: absolute;
+    background: $white100-cl;
+    z-index: 900;
+    opacity: 1;
+    pointer-events: auto;
+    @include transition(0.1s);
+    &.--show {
+        opacity: 1 !important;
+        pointer-events: none;
+        @include transition(0s);
+    }
+    &.--hide {
+        opacity: 0;
+        pointer-events: none;
+        @include transition(0.1s);
+    }
+}
+
+.overlay {
+    // grid-area: 1 / 1 / 2 /2;
+    position: absolute;
+    z-index: 1000;
+    pointer-events: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+}
+
+.home-once  {
+    opacity: 0;
+}
+.home-once-active {
+    transition: opacity 1s linear 0.3s;
+}
+.home-once-to {
+    opacity: 1;
+}
+
+.about-leave  {
+    opacity: 1;
+    &.overlay__path {
+        d: path()
+    }
+}
+.about-leave-active {
+    transition: opacity 0.3s linear;
+}
+.about-leave-to {
+    opacity: 0;
+}
+
+.about-enter  {
+    opacity: 0;
+}
+.about-enter-active {
+    transition: opacity 0.3s linear;
+}
+.about-enter-to {
+    opacity: 1;
+}
+
+.cover-loading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    z-index: 100;
+    pointer-events: none;
+    background-color: black;
+}
