@@ -1122,8 +1122,7 @@ function homeScript() {
             scrollTrigger: {
                 trigger: DOM.bannerSection,
                 scrub: true,
-                start: "top 90px",
-                markers: true
+                start: "top 90px"
             }
         });
         tl1.to(DOM.bannerImg, {

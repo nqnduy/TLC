@@ -422,7 +422,7 @@ function homeScript() {
 			bannerImg: select(".banner .banner__img img"),
 		};
 
-		let tl = gsap.timeline({ scrollTrigger: { trigger: DOM.bannerSection, scrub: true, start: "top 90px", markers: true }});
+		let tl = gsap.timeline({ scrollTrigger: { trigger: DOM.bannerSection, scrub: true, start: "top 90px"}});
 
 		tl.to(DOM.bannerImg, { yPercent: 30, ease: "none" });
 	}
