@@ -201,7 +201,11 @@ const enterPage = () => {
 		delay: 0.3,
 		onStart: () => {
 			window.scrollTo(0, 0);
+
 		},
+		onComplete: () => {
+			ScrollTrigger.refresh(true);
+		}
 	});
 	tlEnter
     .to(coverLoading, {
@@ -221,7 +225,7 @@ const leavePage = () => {
 	tlLeave
     .set(coverLoading, {
 		yPercent: -100,
-		zIndex: 100,
+		zIndex: 101,
     })
     .to(coverLoading, {
 		duration: 1.2,
@@ -241,33 +245,41 @@ barba.init({
 	sync: true,
 	transitions: [
 		{
-		async leave(data) {
-			const done = this.async();
+			async leave(data) {
+				const done = this.async();
 
-			leavePage();
-			await delay(1000);
-			done();
-		},
-		async enter(data) {
-			enterPage();
-		},
-		once(data) {
-			enterPage();
-		},
+				leavePage();
+				await delay(1000);
+				done();
+			},
+			async enter(data) {
+				enterPage();
+			},
+			once(data) {
+				enterPage();
+			},
 		},
 	],
 	views: [
-    {
-		namespace: "home",
-		beforeEnter() {
-			homeScript();
+		{
+			namespace: "home",
+			beforeEnter() {
+				ScrollTrigger.refresh();
+
+				homeScript();
+			},
+			// afterEnter(data) {
+			// },
 		},
-		},
-    {
-		namespace: "about",
-		beforeEnter() {
-			aboutScript();
-		},
+		{
+			namespace: "about",
+			beforeEnter() {
+				ScrollTrigger.refresh();
+
+				aboutScript();
+			},
+			// afterEnter(data) {
+			// },
 		},
 	],
 });
@@ -451,12 +463,12 @@ function aboutScript() {
     });
 
 	function initBanner() {
-        // const splitH1 = new SplitType("h1", { type: "lines, chars", linesClass: "line", charsClass: "char", position: "relative" });
+        const splitH1 = new SplitType("h1", { type: "lines, chars", linesClass: "line", charsClass: "char", position: "relative" });
 
-		// const tl = gsap.timeline({ delay: 0.5 });
-		// tl
-		// 	.from("h1", { ease: "power4", y: "+=5vh", duration: 2 })
-		// 	.from("h1 .line__inner", { ease: "power4", y: 200, duration: 1.5}, "<= 0");
+		const tl = gsap.timeline({ delay: 0.5 });
+		tl
+			.from("h1", { ease: "power4", y: "+=5vh", duration: 2 })
+			.from("h1 .line__inner", { ease: "power4", y: 200, duration: 1.5}, "<= 0");
 	}
 
 	function initIntro() {
@@ -472,6 +484,8 @@ function aboutScript() {
 
 			textItem: selectAll(".intro__textWrap p"),
 		};
+
+		console.log("DOM 👉️", DOM)
 
 		const splitHeadline = new SplitType(DOM.headline, { type: "lines, chars", linesClass: "line", charsClass: "char", position: "relative" });
 		const splitH2 = new SplitType(DOM.h2, { type: "lines, chars", linesClass: "line", charsClass: "char", position: "relative" });
@@ -496,6 +510,7 @@ function aboutScript() {
 
 		tl3
 			.from(DOM.textItem, { ease: "power4", y: "+=5vh", opacity: 0, duration: 1.5, stagger: 0.2, }, 0);
+
 	}
 
 	function initSolution() {
